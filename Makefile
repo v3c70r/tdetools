@@ -1,6 +1,6 @@
-CXXFLAGS = -O3 -ftree-vectorize -march=native -pthread -Wall -I${HOME}/include `pkg-config --cflags opencv` -I/opt/local/include
+CXXFLAGS = -O3 -ftree-vectorize -march=native -pthread -Wall -I${HOME}/include `pkg-config --cflags opencv` -I/opt/local/include -I./
 #CXXFLAGS = -g -ggdb -pthread -Wall -I${HOME}/include `pkg-config --cflags opencv` -I/opt/local/include
-LIBS = -L${HOME}/lib -L/usr/lib -lANN -lddtsa -lcxcore
+LIBS = -L./Tisean -L${HOME}/lib -L/usr/lib -lann -lddtsa `pkg-config --libs opencv` 
 TARGETS = $(buildtree_TARGET) $(classifytrajectory_TARGET)
 OBJS = $(buildtree_OBJS) $(classifytrajectory_OBJS)
 CXX = g++
